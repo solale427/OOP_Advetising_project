@@ -1,8 +1,8 @@
-from classes import BaseAdvertising
-from classes import Advertiser
+from classes.BaseAdvertising import BaseAdvertising
+from classes.Advertiser import Advertiser
 
 
-def describe_me():
+def _help():
     print(
         'id: id of this Advertisement which is unique\n'
         'advertiser: The advertiser od this Advertisement\n'
@@ -14,11 +14,25 @@ def describe_me():
     )
 
 
+def describe_me():
+    print(
+        'This class represents a blueprint of an advertisement which has certain methods to access each field and '
+        'change it.'
+    )
+
+
 class Ad(BaseAdvertising):
     __advertiser: Advertiser
     __title: str
     __imgUrl: str
     __link: str
+
+    def __init__(self, _id, title, imgUrl, link, advertiser):
+        super.__init__(_id)
+        self.__link = link
+        self.__advertiser = advertiser
+        self.__title = title
+        self.__imgUrl = imgUrl
 
     def get_title(self):
         return self.__title
@@ -44,4 +58,3 @@ class Ad(BaseAdvertising):
     def inc_clicks(self):
         super.inc_clicks()
         self.__advertiser.inc_clicks()
-
