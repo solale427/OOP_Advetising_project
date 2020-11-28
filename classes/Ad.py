@@ -3,10 +3,6 @@ from classes.Advertiser import Advertiser
 
 
 class Ad(BaseAdvertising):
-    __advertiser: Advertiser
-    __title: str
-    __imgUrl: str
-    __link: str
 
     def __init__(self, _id: int, title: str, imgUrl: str, link: str, advertiser: Advertiser):
         super(Ad, self).__init__()
@@ -16,7 +12,47 @@ class Ad(BaseAdvertising):
         self.__title = title
         self.__imgUrl = imgUrl
 
-    def get_title(self)-> str:
+    @property
+    def id(self) -> int:
+        return self.__id
+
+    @id.setter
+    def id(self, id: int):
+        self.__id = id
+
+    @property
+    def link(self) -> str:
+        return self.__link
+
+    @link.setter
+    def link(self, link: str):
+        self.__link = link
+
+    @property
+    def imgUrl(self) -> str:
+        return self.__imgUrl
+
+    @imgUrl.setter
+    def imgUrl(self, imgUrl: str):
+        self.__imgUrl = imgUrl
+
+    @property
+    def title(self) -> str:
+        return self.__title
+
+    @title.setter
+    def title(self, title: str):
+        self.__title = title
+
+    @property
+    def advertiser(self) -> Advertiser:
+        return self.__advertiser
+
+    @advertiser.setter
+    def advertiser(self, advertiser: Advertiser):
+        self.__advertiser = advertiser
+
+    def get_title(self) -> str:
         return self.__title
 
     def set_title(self, title: str):

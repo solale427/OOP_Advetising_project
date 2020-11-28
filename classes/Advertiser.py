@@ -29,8 +29,16 @@ class Advertiser(BaseAdvertising):
         return self.__name
 
     @name.setter
-    def name(self, name):
-        self.__name = name
+    def name(self, new_name: str):
+        self.__name = new_name
+
+    @property
+    def id(self) -> int:
+        return self.__id
+
+    @id.setter
+    def id(self, id: int):
+        self.__id = id
 
     def get_name(self) -> str:
         return self.__name
