@@ -1,5 +1,5 @@
 from classes.Ad import Ad
-from classes.Advertiser import Advertiser, get_total_clicks, _help
+from classes.Advertiser import Advertiser
 from classes.BaseAdvertising import BaseAdvertising
 
 baseAdvertising = BaseAdvertising()
@@ -21,11 +21,10 @@ ad1.inc_clicks()
 ad1.inc_clicks()
 ad2.inc_clicks()
 
-
 print(advertiser2.get_name(), '\n')
 advertiser2.set_name('new name')
 print(advertiser2.get_name(), '\n')
 print(ad1.get_clicks(), '\n')
 print(advertiser2.get_clicks(), '\n')
-print(get_total_clicks(), '\n')
-_help()
+print(Advertiser.get_total_clicks(), '\n')
+Advertiser._help()

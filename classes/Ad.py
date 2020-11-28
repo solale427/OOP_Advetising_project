@@ -44,7 +44,8 @@ class Ad(BaseAdvertising):
         super(Ad, self).inc_views()
         self.__advertiser.inc_views()
 
-    def _help(self):
+    @staticmethod
+    def _help():
         print(
             'id: id of this Advertisement which is unique\n'
             'advertiser: The advertiser od this Advertisement\n'
@@ -55,7 +56,8 @@ class Ad(BaseAdvertising):
             'views: The number of this Advertisements views\n'
         )
 
-    def describe_me(self):
+    @staticmethod
+    def describe_me():
         print(
             'Ad: This class represents a blueprint of an advertisement which has certain methods to access each field '
             'and change it.\n'
