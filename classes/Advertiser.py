@@ -6,14 +6,14 @@ class Advertiser(BaseAdvertising):
 
     advertisers = []
 
-    def __init__(self, _id, name):
+    def __init__(self, _id: int, name: str):
         super(Advertiser, self).__init__()
         self.__id = _id
         self.__name = name
         Advertiser.advertisers.append(self)
 
     @staticmethod
-    def get_total_clicks():
+    def get_total_clicks() -> int:
         return functools.reduce(lambda clicks1, clicks2: clicks1 + clicks2,
                                 map(lambda advertiser: advertiser.get_clicks(), Advertiser.advertisers))
 
@@ -26,10 +26,10 @@ class Advertiser(BaseAdvertising):
             'views: The number of this Advertiser views\n'
         )
 
-    def get_name(self):
+    def get_name(self) -> str:
         return self.__name
 
-    def set_name(self, name):
+    def set_name(self, name: str):
         self.__name = name
 
     def describe_me(self):

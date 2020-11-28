@@ -3,10 +3,10 @@ class BaseAdvertising:
     __clicks: int = 0
     __views: int = 0
 
-    def get_clicks(self):
+    def get_clicks(self) -> int:
         return self.__clicks
 
-    def get_views(self):
+    def get_views(self) -> int:
         return self.__views
 
     def inc_clicks(self):

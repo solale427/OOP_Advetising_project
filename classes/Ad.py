@@ -8,32 +8,33 @@ class Ad(BaseAdvertising):
     __imgUrl: str
     __link: str
 
-    def __init__(self, _id, title, imgUrl, link, advertiser):
+    def __init__(self, _id: int, title: str, imgUrl: str, link: str, advertiser: Advertiser):
+        super(Ad, self).__init__()
         self.__id = _id
         self.__link = link
         self.__advertiser = advertiser
         self.__title = title
         self.__imgUrl = imgUrl
 
-    def get_title(self):
+    def get_title(self)-> str:
         return self.__title
 
-    def set_title(self, title):
+    def set_title(self, title: str):
         self.__title = title
 
-    def get_imgUrl(self):
+    def get_imgUrl(self) -> str:
         return self.__imgUrl
 
-    def set_imgUrl(self, imgUrl):
+    def set_imgUrl(self, imgUrl: str):
         self.__imgUrl = imgUrl
 
-    def get_link(self):
+    def get_link(self) -> str:
         return self.__link
 
-    def det_link(self, link):
+    def det_link(self, link: str):
         self.__link = link
 
-    def set_advertiser(self, advertiser):
+    def set_advertiser(self, advertiser: Advertiser):
         self.__advertiser = advertiser
 
     def inc_clicks(self):
